@@ -11,8 +11,20 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 24px;
+  color: black;
 }
 
+.card_image {
+  object-fit: fill;
+  object-position: center;
+
+}
+
+.card_image_container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
 
 .button_container {
   display: flex;

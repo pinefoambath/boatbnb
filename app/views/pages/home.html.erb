@@ -4,82 +4,129 @@
 </div>
 
 <div class="cards">
-  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <p>France</p>
-        <h2>Moonlight Shadow</h2>
-      </div>
-      <h2 class="card-trip-pricing">price per day: $220</h2>
 
-     </div>
-  </div>
 
-  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1581271164789-7c97932822d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Harfin</h2>
-          <p>Greece</p>
-        </div>
-        <h2 class="card-trip-pricing">$450</h2>
+    <% @boats.each do |boat| %>
+        <div class="card-trip">
+          <%= link_to boat_path(boat) do %>
+              <div class="card_image_container">
+                <img class="card_image" src="<%= boat.image_url %>"/>
+              </div>
+                <div class="card-trip-infos">
+                    <div>
+                      <p><%= boat.location_country %></p>
+                      <h2><%= boat.name %></h2>
+                    </div>
+                    <div>
+                      <h2 class="card-trip-pricing">price per day: $<%= boat.daily_price %></h2>
+                    </div>
+                </div>
+          <% end %>
 
       </div>
-  </div>
-
-  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1558268295-a713169178e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Wet Feet</h2>
-        <p>Italy</p>
-      </div>
-      <h2 class="card-trip-pricing">price per day: $280</h2>
-
-    </div>
-  </div>
-
-  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1583200560150-53bb14229e0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Southern Star</h2>
-        <p>Turkey</p>
-      </div>
-      <h2 class="card-trip-pricing">$99</h2>
-
-    </div>
-  </div>
-
-    <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Tomorrow Never Dies</h2>
-        <p>Spain</p>
-      </div>
-      <h2 class="card-trip-pricing">$2,000</h2>
-
-    </div>
-  </div>
-
-    <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Gin and Tonic</h2>
-        <p>Tunisia</p>
-      </div>
-      <h2 class="card-trip-pricing">$120</h2>
-s
-    </div>
-  </div>
+     <% end %>
+<!--
+       <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2>Tomorrow Never Dies</h2>
+                    <p>Spain</p>
+                  </div>
+                  <h2 class="card-trip-pricing">$2,000</h2>
+                </div>
+        </div> -->
 
 
+</div>
+<!-- </div>
+
+                <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2>Tomorrow Never Dies</h2>
+                    <p>Spain</p>
+                  </div>
+                  <h2 class="card-trip-pricing">$2,000</h2>
+
+                </div> -->
+             <!--  <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <p>France</p>
+                    <h2>Moonlight Shadow</h2>
+                  </div>
+                  <h2 class="card-trip-pricing">price per day: $220</h2>
+
+                 </div>
+              </div>
+
+              <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1581271164789-7c97932822d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                  <div class="card-trip-infos">
+                    <div>
+                      <h2>Harfin</h2>
+                      <p>Greece</p>
+                    </div>
+                    <h2 class="card-trip-pricing">$450</h2>
+
+                  </div>
+              </div>
+
+              <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1558268295-a713169178e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2>Wet Feet</h2>
+                    <p>Italy</p>
+                  </div>
+                  <h2 class="card-trip-pricing">price per day: $280</h2>
+
+                </div>
+              </div>
+
+              <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1583200560150-53bb14229e0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2>Southern Star</h2>
+                    <p>Turkey</p>
+                  </div>
+                  <h2 class="card-trip-pricing">$99</h2>
+
+                </div>
+              </div>
+
+                <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2>Tomorrow Never Dies</h2>
+                    <p>Spain</p>
+                  </div>
+                  <h2 class="card-trip-pricing">$2,000</h2>
+
+                </div>
+              </div>
+
+                <div class="card-trip">
+                <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2>Gin and Tonic</h2>
+                    <p>Tunisia</p>
+                  </div>
+                  <h2 class="card-trip-pricing">$120</h2>
+            s
+                </div>
+              </div>
 
 
-  </div>
+ -->
+
+
 
     <div class="button_container">
       <div class="add_new"><%= link_to "List your Boat", new_boat_path %>

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'boats/index'
-  get 'boats/show'
-  get 'boats/create'
-  get 'boats/destroy'
-  get 'boats/new'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/destroy'
+  # get 'boats/index'
+  # get 'pages#home', to: 'boats#show'
+  # get 'boats/create'
+  # get 'boats/destroy'
+  # get 'boats/new'
+  # get 'bookings/new'
+  # get 'bookings/create'
+  # get 'bookings/destroy'
   devise_for :users
   root to: 'pages#home'
   resources :boats, only: [:index, :show, :new, :create, :destroy] do

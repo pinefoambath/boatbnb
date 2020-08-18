@@ -13,6 +13,27 @@
   margin: 24px;
 }
 
+
+.button_container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 34px;
+}
+
+.add_new {
+  padding: 16px;
+  font-size: 24px;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.add_new:hover {
+  background-color: #98C6E4;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
 .footer {
   background-color: #98C6E4;
   color: white;

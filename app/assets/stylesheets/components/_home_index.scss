@@ -1,5 +1,9 @@
 .title_home {
-   margin-left: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .cards {
@@ -8,6 +12,15 @@
   grid-gap: 16px;
   margin: 24px;
 }
+
+.footer {
+  background-color: #98C6E4;
+  color: white;
+  text-align: center;
+  padding-bottom: 50px;
+  margin-top: 300px;
+  height: 10px;
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

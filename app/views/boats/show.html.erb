@@ -4,10 +4,10 @@
 <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <% if @boat.photo %>
-                    <%= cl_image_tag @article.photo.key, crop: :fill %>
+                    <% if @boat.photo.present? %>
+                      <%= cl_image_tag @boat.photo.key, crop: :fill %>
                     <% else %>
-                    <%= image_tag(@boat.image_url, class: "rounded show-image") %>
+                      <%= image_tag(@boat.image_url, class: "rounded show-image") %>
                     <% end %>
                 </div>
 

@@ -24,3 +24,9 @@
 h1, h2, p {
     text-align: center;
 }
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    border: floor($number: 2);
+}

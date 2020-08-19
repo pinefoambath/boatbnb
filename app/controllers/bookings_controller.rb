@@ -1,15 +1,17 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    @boat = Boat.find(params[:boat_id])
   end
 
   def create
-
-    @booking  =Booking.new(booking_params)
-    @user = User.find(params[:user_id])
-    @booking.user = @user
-
+    @booking = Booking.new(booking_params)
+    @boat = Boat.find(params[:boat_id])
+    days_booked = @booking.end_date - @booking.start_date
+    @booking.total_price = days_booked*@boat.daily_price
+    @booking.boat = @boat
+    @booking.user = current_user
     if @booking.save
       redirect_to root_path
     else

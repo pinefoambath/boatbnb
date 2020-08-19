@@ -1,17 +1,15 @@
-
-<div class="main_section">
-    <h1>Add a boat</h1>
-<!--
-  <div class="new_content_container">
-    <div>
-      <h2 class="title">Add a new boat:</h2>
-    </div>
-    <%= simple_form_for [ @boat ] do |f| %>
-      <%= f.input :name %>
-      <%= f.input :name %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "List boat", class: "btn btn-primary" %>
-    <% end %>
-  </div>
- -->
+</div>
+  <%= simple_form_for @boat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :make %>
+    <%= f.input :length %>
+    <%= f.input :address %>
+    <%= f.input :daily_price %>
+    <%= f.input :sleeps %>
+    <%= f.input :year_built %>
+    <%= f.input :boat_type %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: "btn-primary" %>
+  <% end %>
+  <%= link_to "I don't want to list a boat right now", root_path %>
 </div>

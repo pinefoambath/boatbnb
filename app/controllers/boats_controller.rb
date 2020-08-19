@@ -5,6 +5,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -13,10 +14,11 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(strong_params)
+    @boat.user = current_user
     if @boat.save
       redirect_to boat_path(@boat)
     else
-      render:new
+      render :new
     end
   end
 
@@ -30,10 +32,7 @@ class BoatsController < ApplicationController
   private
 
   def strong_params
-    params.require(:boat).permit(:name, :length, :make, :location_country, :location_marina, :number_of_berths, :daily_price)
+    params.require(:boat).permit(:name, :make, :length, :address, :daily_price, :sleeps, :year_built, :boat_type, :photo)
   end
 
-
 end
-
-

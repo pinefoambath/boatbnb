@@ -25,6 +25,13 @@ h1, h2, p {
     text-align: center;
 }
 
+ul {
+    text-align: center;
+    list-style-type: none;
+    border: floor($number: 2);
+}
+
 .booking_container {
   margin-top: 24px;
 }
+

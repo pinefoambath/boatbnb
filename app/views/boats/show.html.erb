@@ -3,23 +3,28 @@
 
 <div class="container">
             <div class="row">
-
                 <div class="col-8">
-                    <img src="https://image.freepik.com/free-photo/luxury-big-yacht-stay-sea-around-island-background-sky_8353-6005.jpg" alt="..." class="rounded show-image" >
-                    <%# <%= image_tag(@boat.image_url) %>
-                </div>
-                <div class="col-4 ">
-                    <img src="https://image.freepik.com/free-photo/sun-shines-wooden-wheel-held-by-man_1304-3227.jpg" alt="..." class="rounded show-image">
-                   <%# <%= image_tag(@boat.image_url ) %>
+                    <%= image_tag(@boat.image_url, class: "rounded show-image") %>
                 </div>
 
+                <div class="col-4">
+                   <%= image_tag(@boat.image_url, class: "rounded show-image") %>
+
+                </div>
             </div>
     <div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  
+    <br>        
+        <ul>
+        <li>Name: <%=@boat.name %> </li>
+        <li>Make: <%=@boat.make %> </li>
+        <li>Length: <%=@boat.length %> </li>
+        <li> Location country: <%= @boat.location_country %> </li>
+        <li> Location Marina: <%= @boat.location_marina %> </li>
+        <li> Number of beds: <%= @boat.sleeps %></li>
+        <li> Daily Price: £<%= @boat.daily_price %></li>
+        </ul>
+                
     <br>
     <h2> Interior </h2>
     <p> Luxury boat designed for sailing with family and friends, equiped with the latest technology so you can go in the deep ocean for fun or fishing and feel comfortable!</p>

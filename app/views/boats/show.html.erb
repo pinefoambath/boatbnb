@@ -12,9 +12,9 @@
                 </div>
 
                 <div class="col-4">
-                   <%= image_tag(@boat.image_url, class: "rounded show-image") %>
-
+                 <img src="https://images.unsplash.com/photo-1559689555-ef9c44539b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" class="rounded show-image">  
                 </div>
+
             </div>
     <div>
 
@@ -26,7 +26,7 @@
         <li>Length: <%=@boat.length %> </li>
         <li> Location country: <%= @boat.location_country %> </li>
         <li> Location Marina: <%= @boat.location_marina %> </li>
-        <li> Number of beds: <%= @boat.sleeps %></li>
+        <li> Number of Beds: <%= @boat.sleeps %></li>
         <li> Daily Price: £<%= @boat.daily_price %></li>
         </ul>
 

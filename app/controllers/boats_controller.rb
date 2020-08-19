@@ -31,7 +31,7 @@ class BoatsController < ApplicationController
   private
 
   def strong_params
-    params.require(:boat).permit(:name, :make, :length, :address, :daily_price, :sleeps, :year_built, :boat_type)
+    params.require(:boat).permit(:name, :make, :length, :address, :daily_price, :sleeps, :year_built, :boat_type, :photo)
   end
 
 end

@@ -12,6 +12,7 @@
     <%= f.input :sleeps %>
     <%= f.input :year_built %>
     <%= f.input :boat_type %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class: "btn-primary" %>
   <% end %>
   <%= link_to "I don't want to list a boat right now", root_path %>

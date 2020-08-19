@@ -1,15 +1,20 @@
+</div class="container">
+  <div>
+    <%= simple_form_for @boat do |f| %>
+      <%= f.input :name %>
+      <%= f.input :make %>
+      <%= f.input :length %>
+      <%= f.input :address %>
+      <%= f.input :daily_price %>
+      <%= f.input :sleeps %>
+      <%= f.input :year_built %>
+      <%= f.input :boat_type %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+    <%= link_to "I don't want to list a boat right now", root_path %>
+  </div>
 </div>
-  <%= simple_form_for @boat do |f| %>
-    <%= f.input :name %>
-    <%= f.input :make %>
-    <%= f.input :length %>
-    <%= f.input :address %>
-    <%= f.input :daily_price %>
-    <%= f.input :sleeps %>
-    <%= f.input :year_built %>
-    <%= f.input :boat_type %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class: "btn-primary" %>
-  <% end %>
-  <%= link_to "I don't want to list a boat right now", root_path %>
-</div>
+
+
+<%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %>

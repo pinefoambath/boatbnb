@@ -4,7 +4,11 @@
 <div class="container">
             <div class="row">
                 <div class="col-8">
+                    <% if @boat.photo %>
+                    <%= cl_image_tag @article.photo.key, crop: :fill %>
+                    <% else %>
                     <%= image_tag(@boat.image_url, class: "rounded show-image") %>
+                    <% end %>
                 </div>
 
                 <div class="col-4">
@@ -13,8 +17,9 @@
                 </div>
             </div>
     <div>
-  
-    <br>        
+
+
+    <br>
         <ul>
         <li>Name: <%=@boat.name %> </li>
         <li>Make: <%=@boat.make %> </li>
@@ -24,7 +29,7 @@
         <li> Number of beds: <%= @boat.sleeps %></li>
         <li> Daily Price: £<%= @boat.daily_price %></li>
         </ul>
-                
+
     <br>
     <h2> Interior </h2>
     <p> Luxury boat designed for sailing with family and friends, equiped with the latest technology so you can go in the deep ocean for fun or fishing and feel comfortable!</p>

@@ -1,15 +1,16 @@
-<h1> The boat </h1>
-<p> Details about your choosen boat </p>
+<h1> Details for <%= @boat.name %> </h1>
+    <p> <%= @boat.name %> is a <%= @boat.boat_type %> built in <%= @boat.year_built %> </p>
 
 <div class="container">
             <div class="row">
 
                 <div class="col-8">
                     <img src="https://image.freepik.com/free-photo/luxury-big-yacht-stay-sea-around-island-background-sky_8353-6005.jpg" alt="..." class="rounded show-image" >
-
+                    <%# <%= image_tag(@boat.image_url) %>
                 </div>
-                <div class="col-4">
-                    <img src="https://image.freepik.com/free-photo/sun-shines-wooden-wheel-held-by-man_1304-3227.jpg" alt="..." class="rounded show-image">
+                <div class="col-4 ">
+                    <img src="https://image.freepik.com/free-photo/sun-shines-wooden-wheel-held-by-man_1304-3227.jpg" alt="..." class="rounded show-image"> 
+                   <%# <%= image_tag(@boat.image_url ) %>  
                 </div>
 
             </div>

@@ -1,0 +1,23 @@
+<h1>User Dashboard</h1>
+
+<h2> Your Bookings </h2>
+  <div>
+    <% if @user.bookings.size > 0 %>
+        <% @user.bookings.each do |booking| %>
+          <p>You booked <%= booking.boat.name %> from <%= booking.start_date %> to <%= booking.end_date %></p>
+        <% end %>
+    <% else %>
+        <p>You've not made any bookings yet.</p>
+    <% end %>
+  </div>
+
+<h2> Your Boats </h2>
+  <div>
+      <% if @user.boats.size > 0 %>
+         <% @user.boats.each do |boat| %>
+          <p>You're currently listing <%= boat.name %></p>
+         <% end %>
+      <% else %>
+        <p>You're not currently listing any boats</p>
+     <% end %>
+  </div>

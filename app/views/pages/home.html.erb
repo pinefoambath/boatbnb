@@ -1,6 +1,17 @@
 <div class="title_home">
   <h1>Boat BnB</h1>
   <h2>⛵️ Rent beautiful boats or list your own boat ⛵️</h2>
+
+  <div class="boat_search">
+      <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control sizing",
+            placeholder: "Find your perfect boat: type location, boat type or boat name)"
+          %>
+
+      <% end %>
+  </div>
 </div>
 
 <div class="cards">
@@ -15,7 +26,7 @@
               </div>
                 <div class="card-trip-infos">
                     <div>
-                      <p><%= boat.location_country %></p>
+                      <p class="align_left"><%= boat.location_country %></p>
                       <h2><%= boat.name %></h2>
                     </div>
                     <div>

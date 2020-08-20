@@ -1,6 +1,11 @@
 class BoatsController < ApplicationController
   def index
-    @boats = Boat.all
+    # raise
+    # if params[:query].present?
+    #   @boats = Boat.search_by_location_boat_type_boat_name(params[:query])
+    # else
+    #   @boats = Boat.all
+    # end
   end
 
   def show

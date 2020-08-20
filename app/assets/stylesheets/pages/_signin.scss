@@ -1,9 +1,15 @@
-.container {
+.sign-in-container {
   margin: 100px;
   padding: 25px;
   margin: 5px 0 12px 0;
   border: none;
   background: #f1f1f1;
+  text-align:center;
+
+}
+.sign-in-box{
+  display:flex;
+  justify-content: center;
 
 }
 .btn {

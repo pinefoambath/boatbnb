@@ -1,6 +1,14 @@
 class BoatsController < ApplicationController
   def index
-    @boats = Boat.all
+    @boats = Boat.geocoded
+
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        infoWinidow: render_to_string(partial: "info_window", locals: { boat: boat }),
+      }
+    end
   end
 
   def show

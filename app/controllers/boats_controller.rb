@@ -1,11 +1,15 @@
 class BoatsController < ApplicationController
   def index
-    # raise
-    # if params[:query].present?
-    #   @boats = Boat.search_by_location_boat_type_boat_name(params[:query])
-    # else
-    #   @boats = Boat.all
-    # end
+    @boats = Boat.geocoded
+
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        infoWinidow: render_to_string(partial: "info_window", locals: { boat: boat }),
+      }
+    end
+
   end
 
   def show

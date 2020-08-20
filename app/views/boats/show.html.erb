@@ -2,63 +2,66 @@
     <p> <%= @boat.name %> is a <%= @boat.boat_type %> built in <%= @boat.year_built %> </p>
 
 <div class="container">
-            <div class="row">
-                <div class="col-8">
-                <%# <%= image_url(photo.key, class: "rounded show-image") %>
-                <% if @boat.photo.attached? %>
-                      <%= cl_image_tag(@boat.photo.key, class: "rounded show-image") %>
-                    <% else %>                                  
-                     <%=image_tag(@boat.image_url, class: "rounded show-image") %>
-                    <% end %>
-                
-                
-               </div>
-              <div class="col-4">
-                 
-                  <div id="map"
-                    style="width: 100%; height: 600px;"
-                    data-markers="<%= @markers.to_json %>"
-                    data-mapbox-api-key="<%= ENV['pk.eyJ1IjoidmlrdG9yODkiLCJhIjoiY2tkYWFyOWVoMWMxNzJ3c2Mxdjl2aGIybiJ9.dND-08Kw2PeXk0VIG4mDIQ'] %>"></div>
-               </div>
-             </div>
-    <div>
-
-    <br>
-        <ul>
-        <li>Name: <%=@boat.name %> </li>
-        <li>Make: <%=@boat.make %> </li>
-        <li>Length: <%=@boat.length %> </li>
-        <li> Location country: <%= @boat.location_country %> </li>
-        <li> Location Marina: <%= @boat.location_marina %> </li>
-        <li> Number of Beds: <%= @boat.sleeps %></li>
-        <li> Daily Price: £<%= @boat.daily_price %></li>
-        </ul>
-    <br>
-    <h2> Interior </h2>
-    <p> Luxury boat designed for sailing with family and friends, equiped with the latest technology so you can go in the deep ocean for fun or fishing and feel comfortable!</p>
-    </div>
-
-    <div class="picture-container">
+  <div class="row">
+    <div class="col-8 col-sm-12">
+    <%# <%= image_url(photo.key, class: "rounded show-image") %>
       <% if @boat.photo.attached? %>
-        <% @boat.photos.each do |photo| %>
-          <%= cl_image_tag(photo.key, class: "rounded show-image") %>
-        <% end %>
-      <% else %>   
-        <% 4.times do %>                               
-          <%=image_tag(@boat.image_url, class: "rounded show-image") %>
-        <% end %>
+        <%= cl_image_tag(@boat.photo.key, class: "rounded show-image mb-4") %>
+      <% else %>
+       <%=image_tag(@boat.image_url, class: "rounded show-image mb-4") %>
       <% end %>
     </div>
 
-    <div class="booking_container">
-        <h2>✨ Book this Boat ✨</h2>
-        <%= simple_form_for [ @boat, @booking ] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
-          <%= f.submit "Book boat for these dates", class: "btn btn-primary" %>
-        <% end %>
+    <div class="col-4 col-sm-6">
+      <h2>✨ Book this Boat ✨</h2>
+      <%= simple_form_for [ @boat, @booking ] do |f| %>
+        <input type="date" name="booking[start_date]" class="w-100">
+
+        <input type="date" name="booking[end_date]" class="w-100">
+        <%= f.submit "Book boat for these dates", class: "btn btn-primary" %>
+      <% end %>
     </div>
+
+    <div class="col-6">
+      <div class="map_and_features">
+        <div class="features">
+          <ul>
+            <li>Name: <%=@boat.name %> </li>
+            <li>Make: <%=@boat.make %> </li>
+            <li>Length: <%=@boat.length %> </li>
+            <li>Address: <%= @boat.address %> </li>
+            <li> Sleeps: <%= @boat.sleeps %></li>
+            <li> Price per day: £<%= @boat.daily_price %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="map_container mt-4" style="width: 100%; height: 300px;">
+      <div id="map"
+        style="width: 100%; height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="pk.eyJ1IjoiYWtyZWlkZXdlaXNzIiwiYSI6ImNrZGE4andkeDB1OXIzNG9keWEwbDN3MnMifQ.NP1zthy8TVXNk8g8LADbSg"></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+      <h2> Time for yourself</h2>
+      <p> Hire this boat for fun, adventure and to create new memories!</p>
+  </div>
+
+
 </div>
 
+<div class="container">
+  <div class="row">
+    <% @boat.photos.each do |photo| %>
+      <div class="col-sm-12 col-md-6">
+        <div class="interior-image" style="background-image: url(<%= cl_image_path(photo.key) %>);">
+        </div>
+      </div>
+    <% end %>
 
-
+  </div>
+</div>

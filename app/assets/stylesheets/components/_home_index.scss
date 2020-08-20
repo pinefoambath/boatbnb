@@ -42,8 +42,16 @@
 
 .footer {
   background-color: #98C6E4;
-  color: white;
+  color: black;
   text-align: center;
+  padding: 20px;
+
+}
+
+.icons{
+  display:flex;
+  align-items:center;
+}
   padding-bottom: 50px;
   margin-top: 200px;
   height: 100px;

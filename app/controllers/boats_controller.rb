@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   def index
-    
+
     @boats = Boat.geocoded
 
     @markers = @boats.map do |boat|
@@ -16,6 +16,13 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @booking = Booking.new
+    @markers = [
+      {
+        lat: @boat.latitude,
+        lng: @boat.longitude,
+        infoWinidow: render_to_string(partial: "info_window", locals: { boat: @boat }),
+      }
+    ]
   end
 
   def new
@@ -27,7 +34,7 @@ class BoatsController < ApplicationController
     @boat.user = current_user
     if @boat.save
       redirect_to boat_path(@boat)
-     
+
     else
       render :new
     end

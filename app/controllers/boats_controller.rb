@@ -9,6 +9,7 @@ class BoatsController < ApplicationController
         infoWinidow: render_to_string(partial: "info_window", locals: { boat: boat }),
       }
     end
+
   end
 
   def show

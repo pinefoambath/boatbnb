@@ -25,8 +25,8 @@ class BoatsController < ApplicationController
     @boat = Boat.new(strong_params)
     @boat.user = current_user
     if @boat.save
-      # redirect_to boat_path(@boat)
-      redirect_to root_path
+      redirect_to boat_path(@boat)
+     
     else
       render :new
     end
@@ -42,7 +42,7 @@ class BoatsController < ApplicationController
   private
 
   def strong_params
-    params.require(:boat).permit(:name, :make, :length, :address, :daily_price, :sleeps, :year_built, :boat_type, :photo)
+    params.require(:boat).permit(:name, :make, :length, :address, :daily_price, :sleeps, :year_built, :boat_type, :photo, photos: [])
   end
 
 end

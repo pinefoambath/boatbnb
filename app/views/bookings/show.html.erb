@@ -1,8 +1,15 @@
-<h1>Bookings Page</h1>
+<div class="container">
 
-<h2>Thanks. This Booking is confirmed.</h2>
+  <h1>Thank you!</h1>
+  <h2>This Booking is confirmed.</h2>
+  <p>You booked <b><%= @booking.boat.name %></b> from <b><%= @booking.start_date %></b> to <b><%= @booking.end_date %></b> </p>
+  <p>An email confirmation will be sent shortly. Enjoy your holiday!</p>
 
-<p> <%= @booking.id %> for:  <%= @booking.boat.name %>, booked from <%= @booking.start_date %> to <%= @booking.end_date %> </p>
 
- <%= link_to "Back to listings", root_path %>
+</div>
 
+<!-- <div class="button_confirmation">
+ <div class="btn btn-primary">
+   <#%= link_to "Back to listings", root_path, :class => "btn" %>
+ </div> -->
+</div>

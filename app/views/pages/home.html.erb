@@ -11,7 +11,7 @@
           <%= link_to boat_path(boat) do %>
               <div class="card_image_container">
                 <!-- <img class="card_image" src="<%= boat.image_url %>"/> -->
-                <img class="card_image" src="<%= boat.photo.attached? ? cl_image_path(boat.photo.key) : boat.image_url %>"/>
+                <img class="card_image" src="<%= boat.photos.attached? ? cl_image_path(boat.photos.first.key) : boat.image_url %>"/>
               </div>
                 <div class="card-trip-infos">
                     <div>

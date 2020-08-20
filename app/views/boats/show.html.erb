@@ -4,21 +4,21 @@
 <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <% if @boat.photo.present? %>
-                      <%= cl_image_tag @boat.photo.key, crop: :fill %>
-                    <% else %>
-                      <%= image_tag(@boat.image_url, class: "rounded show-image") %>
+                    <% if @boat.photo.attached? %>
+                      <%= cl_image_tag(@boat.photo.key, class: "rounded show-image") %>
+                    <% else %>                  
+                      <img src="https://images.unsplash.com/photo-1508094902356-db488e227d75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="rounded show-image">
                     <% end %>
-                </div>
-
-
-                <div class="col-4">
-                 <img src="https://images.unsplash.com/photo-1559689555-ef9c44539b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" class="rounded show-image">  
-                </div>
-
-            </div>
+               </div>
+              <div class="col-4">
+                  <% if @boat.photo.attached? %>
+                  <%= cl_image_tag(@boat.photo.key, class: "rounded show-image") %>
+                  <% else %>
+                  <img src="https://images.unsplash.com/photo-1559689555-ef9c44539b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" class="rounded show-image">
+                  <% end %>
+               </div>
+             </div>
     <div>
-
 
     <br>
         <ul>
@@ -30,33 +30,24 @@
         <li> Number of Beds: <%= @boat.sleeps %></li>
         <li> Daily Price: £<%= @boat.daily_price %></li>
         </ul>
-
     <br>
     <h2> Interior </h2>
     <p> Luxury boat designed for sailing with family and friends, equiped with the latest technology so you can go in the deep ocean for fun or fishing and feel comfortable!</p>
     </div>
 
     <div class="picture-container">
-
-            <img src="https://image.freepik.com/free-photo/ship-control-panel-with-steering-wheel-captain-bridge_1153-3642.jpg" alt="..." class="rounded">
-            <img src="https://images.unsplash.com/photo-1502986591842-471865a47d0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="..." class="rounded">
-            <img src="https://image.freepik.com/free-photo/decorative-wooden-jacht-stands-before-picture-sea-port-wall_1304-3692.jpg" alt="..." class="rounded">
-            <img src="https://images.unsplash.com/photo-1559689555-ef9c44539b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" alt="..." class="rounded">
-
-    </div>
-
-
-    <div class="booking_container">
-      <h2>✨ Book this Boat ✨</h2>
-
-
-      <%= simple_form_for [ @boat, @booking ] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Book boat for these dates", class: "btn btn-primary" %>
+      <% @boat.photos.each do |photo| %>
+      <%= cl_image_tag(photo.key, class: "rounded show-image") %>
       <% end %>
     </div>
-
+    <div class="booking_container">
+        <h2>✨ Book this Boat ✨</h2>
+        <%= simple_form_for [ @boat, @booking ] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Book boat for these dates", class: "btn btn-primary" %>
+        <% end %>
+    </div>
 </div>
 
 

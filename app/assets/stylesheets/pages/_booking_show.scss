@@ -1,7 +1,9 @@
-.container {
+.container_booking {
+  display: flex;
+  flex-direction: column;
   margin: 200px;
   padding: 25px;
-  margin: 5px 0 12px 0;
+  margin: 5px 300px 12px 300px;
   border: none;
   background: #f1f1f1;
 
@@ -23,4 +25,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.booking_links {
+  display: flex;
+  justify-content: space-around;
+
 }

@@ -1,6 +1,26 @@
 <div class="title_home">
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
   <h1>Boat BnB</h1>
   <h2>⛵️ Rent beautiful boats or list your own boat ⛵️</h2>
+
+  <div class="boat_search">
+      <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control sizing",
+            placeholder: "Find your perfect boat: type location, boat type or boat name)"
+          %>
+
+      <% end %>
+  </div>
 </div>
 
 <div class="cards">
@@ -11,11 +31,11 @@
           <%= link_to boat_path(boat) do %>
               <div class="card_image_container">
                 <!-- <img class="card_image" src="<%= boat.image_url %>"/> -->
-                <img class="card_image" src="<%= boat.photo.attached? ? cl_image_path(boat.photo.key) : boat.image_url %>"/>
+                <img class="card_image" src="<%= boat.photos.attached? ? cl_image_path(boat.photos.first.key) : boat.image_url %>"/>
               </div>
                 <div class="card-trip-infos">
                     <div>
-                      <p><%= boat.location_country %></p>
+                      <p class="align_left"><%= boat.location_country %></p>
                       <h2><%= boat.name %></h2>
                     </div>
                     <div>

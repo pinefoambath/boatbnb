@@ -1,0 +1,34 @@
+.container_booking {
+  display: flex;
+  flex-direction: column;
+  margin: 200px;
+  padding: 25px;
+  margin: 5px 300px 12px 300px;
+  border: none;
+  background: #f1f1f1;
+
+}
+.btn {
+  background-color: blue;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  }
+.btn:hover {
+  opacity: 1;
+}
+
+.button_confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking_links {
+  display: flex;
+  justify-content: space-around;
+
+}

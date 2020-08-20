@@ -6,11 +6,15 @@
   margin-bottom: 40px;
 }
 
+.boat_search {
+    display: flex;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 24px;
-  margin: 24px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  margin: 40px;
   color: black;
   border-radius: 5px;
 }
@@ -42,18 +46,16 @@
   text-align: center;
   padding: 20px;
 
-  // display:flex;
-  // flex-direction: row;
-  // justify-content: center;
-
-
 }
 
 .icons{
   display:flex;
   align-items:center;
 }
-
+  padding-bottom: 50px;
+  margin-top: 200px;
+  height: 100px;
+  }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -86,6 +88,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

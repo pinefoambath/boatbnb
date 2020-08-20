@@ -5,6 +5,7 @@
   transition: 0.3s ease-in-out;
     &:hover {
     transform: scale(1.05);
+  color: black;
   }
 }
 
@@ -12,7 +13,7 @@
 .card_image {
   object-fit: cover;
    object-position: center;
-  height: 400px;
+  height: 320px;
   width: 100%;
 }
 
@@ -37,11 +38,12 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 24px 16px 24px 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  color: black;
 }
 
 .card-trip-infos .card-trip-user {
@@ -49,4 +51,8 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.align_left {
+  text-align: left;
 }

@@ -25,14 +25,26 @@
     <div class="col-6">
       <div class="map_and_features">
         <div class="features">
-          <ul>
-            <li>Name: <%=@boat.name %> </li>
-            <li>Make: <%=@boat.make %> </li>
-            <li>Length: <%=@boat.length %> </li>
-            <li>Address: <%= @boat.address %> </li>
-            <li> Sleeps: <%= @boat.sleeps %></li>
-            <li> Price per day: £<%= @boat.daily_price %></li>
-          </ul>
+          <div class="left_info_column">
+            <ul>
+              <li>Name:</li>
+              <li>Make:</li>
+              <li>Length:</li>
+              <li>Located in:</li>
+              <li>Sleeps:</li>
+              <li>Price per day in $:</li>
+            </ul>
+          </div>
+          <div class="right_info_column">
+            <ul>
+              <li><b><%=@boat.name %></b></li>
+              <li><b><%=@boat.make %></b></li>
+              <li><b><%=@boat.length %></b></li>
+              <li><b><%= @boat.address %></b></li>
+              <li><b><%= @boat.sleeps %></b></li>
+              <li><b><%= @boat.daily_price %></b></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

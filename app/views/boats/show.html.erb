@@ -56,24 +56,36 @@
         data-mapbox-api-key="pk.eyJ1IjoiYWtyZWlkZXdlaXNzIiwiYSI6ImNrZGE4andkeDB1OXIzNG9keWEwbDN3MnMifQ.NP1zthy8TVXNk8g8LADbSg"></div>
       </div>
     </div>
-  </div>
 
-  <div>
+
+  <div class="pt-5 pb-3">
       <h2> Time for yourself</h2>
       <p> Hire this boat for fun, adventure and to create new memories!</p>
   </div>
 
-
+    <div class="row">
+      <% if @boat.photos.attached? %>
+        <% @boat.photos.each do |photo| %>
+          <div class="col-sm-12 col-md-6">
+            <!-- <div class="interior-image" style="background-image: url(<%= cl_image_path(photo.key) %>);"> -->
+            <%=cl_image_path(photo.key, class: "rounded show-image mb-4") %>
+          </div>
+        <% end %>
+      <% else %>
+        <% [@boat.image_interior_a, @boat.image_interior_b, @boat.image_interior_c, @boat.image_interior_d].each do |photo| %>
+          <div class="col-sm-12 col-md-6">
+            <!-- <div class="interior-image" style="background-image: url(<%= image_tag(photo) %>)">
+            </div> -->
+            <%=image_tag(photo, class: "rounded show-image mb-4") %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% @boat.photos.each do |photo| %>
-      <div class="col-sm-12 col-md-6">
-        <div class="interior-image" style="background-image: url(<%= cl_image_path(photo.key) %>);">
-        </div>
-      </div>
-    <% end %>
 
-  </div>
-</div>
+
+
+
+
+

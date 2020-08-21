@@ -40,11 +40,14 @@ h1, h2, p {
 }
 
 .map_and_features {
-  display: flex
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .features {
-  font-size: 16px;
+  display: flex;
+
   text-align: left;
   margin: 0px;
   ul {
@@ -60,4 +63,9 @@ h1, h2, p {
 
 .features ul {
   list-style-type: none;
+
+}
+
+.left_info_column {
+  text-align: right;
 }

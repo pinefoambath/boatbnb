@@ -7,7 +7,7 @@ class BoatsController < ApplicationController
       {
         lat: boat.latitude,
         lng: boat.longitude,
-        infoWinidow: render_to_string(partial: "info_window", locals: { boat: boat }),
+        infoWinidow: render_to_string(partial: "info_window", locals: { boat: boat })
       }
     end
 
@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
       {
         lat: @boat.latitude,
         lng: @boat.longitude,
-        infoWinidow: render_to_string(partial: "info_window", locals: { boat: @boat }),
+        infoWinidow: render_to_string(partial: "info_window", locals: { boat: @boat })
       }
     ]
   end

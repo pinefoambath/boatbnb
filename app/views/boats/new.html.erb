@@ -13,8 +13,9 @@
       <%= f.input :sleeps %>
       <%= f.input :year_built %>
       <%= f.input :boat_type %>
+      <%= f.input :photo, as: :file, label: "Upload main photo" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-      <%= f.input :photo, as: :file %>
+
 
       <%= f.button :submit, class: "btn-primary" %>
     <% end %>
@@ -22,3 +23,4 @@
   </div>
 </div>
 <!-- </div> -->
+

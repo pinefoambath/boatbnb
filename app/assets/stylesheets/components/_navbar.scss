@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between !important;
   background: white;
-  background-color:grey;
+  background-color:rgba(0, 41, 70, 0.9);
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,4 +18,13 @@
 
 .anchor {
   font-size: 40px;
+  color: white;
+}
+
+.navbar-collapse {
+  justify-content: center;
+
+}
+.nav-link {
+  color: white !important;
 }

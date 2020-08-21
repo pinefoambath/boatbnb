@@ -68,7 +68,7 @@
         <% @boat.photos.each do |photo| %>
           <div class="col-sm-12 col-md-6">
             <!-- <div class="interior-image" style="background-image: url(<%= cl_image_path(photo.key) %>);"> -->
-            <%=cl_image_path(photo.key, class: "rounded show-image mb-4") %>
+             <%= cl_image_tag(photo.key, class: "rounded show-image mb-4") %>
           </div>
         <% end %>
       <% else %>

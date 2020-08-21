@@ -1,17 +1,17 @@
-
+<div class="container">
 <div class="container_booking">
     <div class="booking_info">
-      <h1>Thank you!</h1>
+      <h1><em>Thank you!</em></h1>
       <h2>This Booking is confirmed.</h2>
       <p> You booked: <b><%= @booking.boat.name %></b>, from <b><%= @booking.start_date %></b> to <b><%= @booking.end_date %></b> </p>
     </div>
     <div class="booking_links">
-       <%= link_to "Back to listings", root_path %>
-       <%= link_to "My Dashboard", user_path %>
+       <%= link_to "Back to listings", root_path, class: "booking-btn" %>
+
+       <%= link_to "My Dashboard",
+       user_path, class: "booking-btn" %>
     </div>
 </div>
-<!-- <div class="space">
-  </div>
- -->
+</div>
 
 

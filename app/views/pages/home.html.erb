@@ -1,13 +1,13 @@
-<div style="background-image: url('https://images.unsplash.com/photo-1542351379-ec2b4cdc6f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);')" class="viktor-banner">
+<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1542351379-ec2b4cdc6f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);')" class="viktor-banner">
   <div class="viktor-title">
-    <h1>Boat <strong>BnB</strong> for <strong>adventurers</strong>!</h1>
-    <p>Book one of our listed boats or list your and <strong> conquer </strong> the world.</p>
+    <h1>Boat BnB</h1>
+    <p>Book one of our boats or list your own!</p>
     <div class="boat_search">
       <%= form_tag root_path, method: :get, class: "w-100" do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control sizing",
-            placeholder: "Find your perfect boat: type location, boat type or boat name"
+            placeholder: "Find your perfect boat by location or type"
           %>
 
       <% end %>

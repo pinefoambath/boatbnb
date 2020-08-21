@@ -1,4 +1,4 @@
-.container_booking {
+.container {
   display: flex;
   flex-direction: column;
   margin: 100px 400px 700px 400px;
@@ -7,17 +7,19 @@
   background: #f1f1f1;
 
 }
-.btn {
-  background-color: blue;
+.booking-btn {
+  background-color: $blue;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  border-radius: 4px;
   opacity: 0.9;
+  margin:5px;
   }
-.btn:hover {
+.booking-btn:hover {
   opacity: 1;
+  text-decoration: none;
 }
 
 .button_confirmation {
@@ -28,7 +30,7 @@
 
 .booking_links {
   display: flex;
-  justify-content: space-around;
+  justify-content:center ;
 
 }
 

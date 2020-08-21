@@ -1,6 +1,6 @@
 <h1>👩🏽‍💻  Dashboard  👩🏽‍💻</h1>
-
-<h2 id="booking_title"> Your Bookings </h2>
+<div class="container">
+ <h2 id="booking_title"> Your Bookings </h2>
   <div class="all_bookings">
     <% if @user.bookings.size > 0 %>
         <% @user.bookings.each do |booking| %>
@@ -20,7 +20,9 @@
       <% else %>
         <p>You're not currently listing any boats</p>
      <% end %>
-  </div>
 
-<div class="space">
   </div>
+</div>
+
+
+

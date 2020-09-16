@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+AirBnB-type Rails app that allows users to list and hire boats.
+Developed as part of my Le Wagon bootcamp www.lewagon.com
